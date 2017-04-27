@@ -3,6 +3,7 @@ info:
   url: https://github.com/ilegra/paas
 eureka:
   client:
+      defaultZone: http://eureka:8761/eureka/,http://localhost:8761/eureka,http://jig-eureka.io.d.ip6n.net:8761/eureka
     serviceUrl:
     registerWithEureka: true
     fetchRegistry: true
