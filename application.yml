@@ -60,10 +60,6 @@ eureka:
       defaultZone: http://${EUREKA_1_PORT_8761_TCP_ADDR:eureka}:8761/eureka/
       
 -----
-spring:
-  application:
-    name: zuul
-
 endpoints:
   restart:
     enabled: true
