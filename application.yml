@@ -1,10 +1,10 @@
 info:
   description: Spring Cloud Samples
-  url: https://github.com/spring-cloud-samples
+  url: https://github.com/ilegra/artifacts
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: http://eureka:8761/eureka/
       
 foo: baz
 
@@ -30,7 +30,7 @@ endpoints:
 eureka:
   password: password
   instance:
-    hostname: ${vcap.application.uris[0]:localhost}
+    hostname: ${vcap.application.uris[0]:eureka}
     nonSecurePort: 80
   client:
     serviceUrl:
@@ -49,7 +49,7 @@ spring:
   profiles: docker
   cloud:
     config:
-      uri: http://${CONFIGSERVER_1_PORT_8888_TCP_ADDR:localhost}:8888
+      uri: http://${CONFIGSERVER_1_PORT_8888_TCP_ADDR:configserver}:8888
 endpoints:
   restart: enabled
 eureka:
@@ -58,5 +58,5 @@ eureka:
     preferIpAddress: true
   client:
     serviceUrl:
-      defaultZone: http://${EUREKA_1_PORT_8761_TCP_ADDR:localhost}:8761/eureka/
+      defaultZone: http://${EUREKA_1_PORT_8761_TCP_ADDR:eureka}:8761/eureka/
 
